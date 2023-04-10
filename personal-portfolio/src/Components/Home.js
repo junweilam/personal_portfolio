@@ -82,10 +82,31 @@ function Home() {
                 <div className="min-h-screen w-full bg-gray-900">
                     {/* Navigation */}
                     <div className="left-0 bg-gray-800 h-screen w-72 border-r-2 border-gray-800 list-disc text-center pt-64">
-                        <p><button className="border-b-2 w-52 border-gray-500  text-white font-bold px-6 py-2 text-xl hover:text-white hover:shadow-[inset_13rem_0_0_0] hover:shadow-red-600 duration-[800ms,1400ms] transition-[color,box-shadow]">Home</button></p>
-                        <p><button className="border-b-2 w-52 border-gray-500  text-white font-bold px-6 py-2 text-xl hover:text-white hover:shadow-[inset_13rem_0_0_0] hover:shadow-red-600 duration-[800ms,1400ms] transition-[color,box-shadow]">About</button></p>
-                        <p><button className="border-b-2 w-52 border-gray-500  text-white font-bold px-6 py-2 text-xl hover:text-white hover:shadow-[inset_13rem_0_0_0] hover:shadow-red-600 duration-[800ms,1400ms] transition-[color,box-shadow]">Past Experiences</button></p>
-                        <p><button className="border-b-2 w-52 border-gray-500  text-white font-bold px-6 py-2 text-xl hover:text-white hover:shadow-[inset_13rem_0_0_0] hover:shadow-red-600 duration-[800ms,1400ms] transition-[color,box-shadow]">Contact</button></p>
+                        {/* When Home Navigation Toggled */}
+                        {homeToggle ? (
+                            <p><button className="border-b-2 w-52 border-gray-500 font-bold bg-red-600 px-6 py-2 text-xl text-white" >Home</button></p>
+                        ) : (
+                            <p><button className="border-b-2 w-52 border-gray-500  text-white font-bold px-6 py-2 text-xl hover:text-white hover:shadow-[inset_13rem_0_0_0] hover:shadow-red-600 duration-[800ms,1400ms] transition-[color,box-shadow]" onClick={onHomeClick}>Home</button></p>
+                        )}
+                        {/* When About Navigation Toggled */}
+                        {aboutToggle ? (
+                            <p><button className="border-b-2 w-52 border-gray-500 font-bold bg-red-600 px-6 py-2 text-xl text-white" >About</button></p>
+                        ) : (
+                            <p><button className="border-b-2 w-52 border-gray-500  text-white font-bold px-6 py-2 text-xl hover:text-white hover:shadow-[inset_13rem_0_0_0] hover:shadow-red-600 duration-[800ms,1400ms] transition-[color,box-shadow]" onClick={onAboutClick}>About</button></p>
+                        )}
+                        {/* When Past Experiences Navigation Toggled */}
+                        {pastToggle ? (
+                            <p><button className="border-b-2 w-52 border-gray-500 font-bold bg-red-600 px-6 py-2 text-xl text-white" >Past Experiences</button></p>
+                        ) : (
+                            <p><button className="border-b-2 w-52 border-gray-500  text-white font-bold px-6 py-2 text-xl hover:text-white hover:shadow-[inset_13rem_0_0_0] hover:shadow-red-600 duration-[800ms,1400ms] transition-[color,box-shadow]" onClick={onPastClick}>Past Experiences</button></p>
+                        )}
+                        {/* When Contact Navigation Toggled */}
+                        {contactToggle ? (
+                            <p><button className="border-b-2 w-52 border-gray-500 font-bold bg-red-600 px-6 py-2 text-xl text-white" >Contact</button></p>
+                        ) : (
+                            <p><button className="border-b-2 w-52 border-gray-500  text-white font-bold px-6 py-2 text-xl hover:text-white hover:shadow-[inset_13rem_0_0_0] hover:shadow-red-600 duration-[800ms,1400ms] transition-[color,box-shadow]" onClick={onContactClick}>Contact</button></p>
+                        )}
+                        
                         <p className="text-white font-bold text-xl pt-20">Light Mode: </p>
                         <label class="toggleDarkBtn">
                             <input type="checkbox" onClick={() => setDarkToggle(!darkToggle)} />
